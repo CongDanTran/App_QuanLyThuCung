@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="700" pageHeight="842" columnWidth="660" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="tenKhachHang" class="java.lang.String"/>
+	<field name="maPhieuGui" class="java.lang.Long"/>
+	<field name="ngayGui" class="java.lang.String"/>
+	<field name="hinhThuc" class="java.lang.String"/>
+	<field name="maThuCung" class="java.lang.Long"/>
+	<field name="chuong" class="java.lang.String"/>
+	<field name="image" class="java.lang.Object"/>
+	<variable name="maPhieuGui_1" class="java.lang.Long" calculation="First">
+		<variableExpression><![CDATA[$F{maPhieuGui}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="246" y="0" width="183" height="49"/>
+				<textElement>
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phiếu Gửi]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="560" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{maPhieuGui_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="258" splitType="Stretch">
+			<image scaleImage="FillFrame" isUsingCache="false">
+				<reportElement x="429" y="10" width="214" height="193"/>
+				<imageExpression><![CDATA[$F{image}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="16" y="10" width="147" height="39"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Tên khách hàng:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="85" width="128" height="39"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Ngày gửi:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="164" width="128" height="39"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Hình thức:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="202" y="10" width="188" height="39"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tenKhachHang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="85" width="128" height="39"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ngayGui}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="164" width="128" height="39"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hinhThuc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="11" width="128" height="35"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mã thú cưng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="11" width="122" height="35"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Chuồng]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="16" y="5" width="147" height="33"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="18" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{maThuCung}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="5" width="122" height="33"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chuong}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="35" splitType="Stretch"/>
+	</summary>
+</jasperReport>
